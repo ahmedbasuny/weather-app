@@ -1,0 +1,31 @@
+<h4>Set system note for today weather status </h4>
+<br />
+<div *ngIf="savedSuccessfully" class="alert alert-success" role="alert">
+  <strong>Message successfully!</strong> You successfully saved this note message.
+  <br />
+</div>
+<div>
+  <textarea [(ngModel)]="message" class="form-control" aria-label="With textarea"></textarea>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="setNote()">Set Note</button>
+</div>
+<br />
+<div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">Old Notes !!</h4>
+
+  <table class="table">
+    <thead>
+      <!-- <tr>
+            <th scope="col">Previous Notes</th>
+          </tr> -->
+    </thead>
+    <tbody>
+      <div *ngFor="let item of oldNotes">
+        <tr>
+          <td>{{ item['date'] }}</td>
+          <td>{{ item['message'] }}</td>
+        </tr>
+      </div>
+    </tbody>
+  </table>
+</div>

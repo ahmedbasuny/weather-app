@@ -1,0 +1,33 @@
+<div (keyup.enter)="getWeather()" class="form-inline my-2 my-lg-0">
+    <input [(ngModel)]="city" class="form-control mr-sm-2" aria-label="Search" [(ngModel)]="city">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="getWeather()">Search</button>
+</div>
+
+<br />
+
+<div class="card text-center">
+    <div class="card-header">
+        <h5>Weather Status</h5>
+    </div>
+    <div class="card-body">
+        <h3 class="card-title" class="text-primary">{{ city | uppercase }} WEATHER</h3>
+        <h5 class="card-title"><strong> {{temp}} </strong></h5>
+        <h5 class="card-text"><strong> {{weather}} </strong></h5>
+    </div>
+    <div class="card-footer text-muted">
+        Weather App By Ahmed Basuny
+    </div>
+</div>
+<br />
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">System Notes !</h4>
+
+    <div *ngIf="definedNote; else systemNote">
+        <p>{{ adminNote }}</p>
+    </div>
+    <ng-template #systemNote>
+        <p>{{ predefinedNote }}</p>
+    </ng-template>
+
+    <p class="mb-0">Thanks for visiting us. Hope to see you Again ...</p>
+</div>

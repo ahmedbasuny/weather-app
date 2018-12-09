@@ -1,0 +1,56 @@
+<div *ngIf="isSetNotes" class="alert alert-success" role="alert">
+    <strong>Notes saved successfully!</strong> You successfully saved this notes.
+    <br />
+</div>
+<h4 class="alert-heading ">Set Automatic Notes</h4>
+<div class="w-50 p-3">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group ">
+            <label for="value1"><strong>Note for temp degree less than 10 and more than 1</strong></label>
+            <textarea type="text" class="form-control" name="value1" [(ngModel)]="form.value1" #value1="ngModel"
+                required></textarea>
+            <div *ngIf="f.submitted && value1.invalid">
+                <div *ngIf="value1.errors.required" class="text-danger">Note is required</div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="value2"><strong>Note for temp degree less than 15 and more than 10</strong></label>
+            <textarea type="text" class="form-control" name="value2" [(ngModel)]="form.value2" #value2="ngModel"
+                required></textarea>
+            <div *ngIf="f.submitted && value2.invalid">
+                <div *ngIf="value2.errors.required" class="text-danger">Note is required</div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="value3"><strong>Note for temp degree less than 20 and more than 15</strong></label>
+            <textarea type="text" class="form-control" name="value3" [(ngModel)]="form.value3" #value3="ngModel"
+                required></textarea>
+            <div *ngIf="f.submitted && value3.invalid">
+                <div *ngIf="value3.errors.required" class="text-danger">Note is required</div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="value4"><strong>Note for temp degree more than 20</strong></label>
+            <textarea type="value4" class="form-control" name="value4" [(ngModel)]="form.value4" #value4="ngModel"
+                required></textarea>
+            <div *ngIf="f.submitted && value4.invalid">
+                <div *ngIf="value4.errors.required" class="text-danger">Note is required</div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="value5"><strong>Note for temp degree less than 1</strong></label>
+            <textarea type="value5" class="form-control" name="value5" [(ngModel)]="form.value5" #value5="ngModel"
+                required></textarea>
+            <div *ngIf="f.submitted && value5.invalid">
+                <div *ngIf="value5.errors.required" class="text-danger">Note is required</div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <button class="btn btn-primary">Set Notes</button>
+            <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+                Signup failed!
+                <br />{{errorMessage}}
+            </div>
+        </div>
+    </form>
+</div>

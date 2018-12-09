@@ -1,0 +1,10 @@
+<br />
+<div *ngIf="info.token; else loggedOut">
+  <app-weather></app-weather>
+</div>
+
+<ng-template #loggedOut>
+  <h3 class="text-info">Welcome to weather app</h3>
+  <br />
+  <div class="text-info"><strong> Please login.</strong> to check weather status.</div>
+</ng-template>
